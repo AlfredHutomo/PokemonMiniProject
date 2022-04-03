@@ -1,12 +1,12 @@
 import { gql } from '@apollo/client';
 
-interface PokemonList {
+export interface PokemonList {
     name: string;
     id: number;
     types: PokemonType[];
 }
 
-interface PokemonType {
+export interface PokemonType {
     type: {
         name: string;
     };
@@ -18,14 +18,14 @@ export interface PokemonListData {
 }
 
 /* This is a type definition for the variables that will be passed to the query. */
-export interface PokemonsVars {
+export interface PokemonListVars {
     limit: number;
     offset: number;
 }
 
-export const POKEMONS = gql`
-    query getPokemonsList {
-        pokemons: pokemon_v2_pokemon(limit: 10, offset: 0) {
+export const POKEMONS_LIST = gql`
+    query getPokemonsList($offset: Int = 0) {
+        pokemons: pokemon_v2_pokemon(limit: 10, offset: $offset) {
             name
             id
             types: pokemon_v2_pokemontypes {
@@ -37,14 +37,14 @@ export const POKEMONS = gql`
     }
 `;
 
-interface PokemonMoves {
+export interface PokemonMoves {
     move_id: number;
     move: { name: string };
     learn_method: { name: string }[];
     move_learn_method_id: number;
 }
 
-interface PokemonDetail {
+export interface PokemonDetail {
     name: string;
     id: number;
     types: PokemonType[];
@@ -64,7 +64,7 @@ export interface PokemonDetailVars {
 
 export const POKEMON_DATA = gql`
     query getPokemonData($pokemonId: Int = 1, $generationId: Int = 1) {
-        pokemon_data: pokemon_v2_pokemon(where: { id: { _eq: $$_pokemonId } }) {
+        pokemon_data: pokemon_v2_pokemon(where: { id: { _eq: $pokemonId } }) {
             name
             id
             types: pokemon_v2_pokemontypes {
@@ -75,7 +75,7 @@ export const POKEMON_DATA = gql`
             moves: pokemon_v2_pokemonmoves(
                 where: {
                     pokemon_v2_versiongroup: {
-                        generation_id: { _eq: $_generationId }
+                        generation_id: { _eq: $generationId }
                     }
                 }
                 order_by: {

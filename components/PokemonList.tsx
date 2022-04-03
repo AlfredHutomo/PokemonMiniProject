@@ -1,18 +1,23 @@
+import { useQuery } from '@apollo/client';
+import PokemonCard from './PokemonCard';
+import {
+    PokemonListData,
+    PokemonListVars,
+    POKEMONS_LIST,
+} from '../utils/queries';
+
 const PokemonList: React.FC = (props) => {
-    {
-        /* {[1, 2, 3, 4, 5, 6, 7].map((id) => (
-                <Card key={id}>
-                    <Image
-                        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
-                        alt={`Pokemon ${id}`}
-                        layout='fill'
-                    />
-                </Card>
-            ))} */
-    }
+    const { loading, data, fetchMore } = useQuery<
+        PokemonListData,
+        PokemonListVars
+    >(POKEMONS_LIST);
+    if (loading) return <div>Loading...</div>;
+
     return (
         <div>
-            <p>Pokemon lists goes here</p>
+            {data?.pokemons.map((pokemon) => (
+                <PokemonCard key={pokemon.id} pokemonData={pokemon} />
+            ))}
         </div>
     );
 };
