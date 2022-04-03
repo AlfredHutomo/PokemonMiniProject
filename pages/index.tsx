@@ -1,4 +1,3 @@
-import { useQuery } from '@apollo/react-hooks';
 import type { GetServerSideProps, NextPage } from 'next';
 
 import Layout from '../components/Layout';
