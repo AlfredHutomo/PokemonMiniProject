@@ -24,8 +24,8 @@ export interface PokemonListVars {
 }
 
 export const POKEMONS_LIST = gql`
-    query getPokemonsList($offset: Int = 0) {
-        pokemons: pokemon_v2_pokemon(limit: 10, offset: $offset) {
+    query getPokemonsList($offset: Int = 0, $limit: Int = 10) {
+        pokemons: pokemon_v2_pokemon(limit: $limit, offset: $offset) {
             name
             id
             types: pokemon_v2_pokemontypes {

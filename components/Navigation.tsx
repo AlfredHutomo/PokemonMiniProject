@@ -1,34 +1,23 @@
-import styled from '@emotion/styled';
-import Link from 'next/link';
+interface NavProps {
+    currentPage: number;
+    setPage: React.Dispatch<React.SetStateAction<number>>;
+}
 
-const NavigationWrapper = styled.div`
-    position: fixed;
-    bottom: 0;
-    overflow: hidden;
+const Nav: React.FC<NavProps> = ({ currentPage, setPage }) => {
+    const handlePrevPage = () => {
+        if (currentPage > 0) setPage(currentPage - 1);
+    };
 
-    display: flex;
-    justify-content: space-evenly;
-    padding: 40px;
-
-    width: 100%;
-    max-width: 640px;
-
-    background-color: #de3065;
-
-    > a {
-        text-decoration: none;
-
-        color: white;
-    }
-`;
-
-const Navigation: React.FC = () => {
+    const handleNextPage = () => {
+        setPage(currentPage + 1);
+    };
     return (
-        <NavigationWrapper>
-            <Link href={'/'}>Pokemons</Link>
-            <Link href={'/my-pokemons'}>My Pokemons</Link>
-        </NavigationWrapper>
+        <nav>
+            <button onClick={handlePrevPage}>Previous</button>
+            <span>{currentPage + 1}</span>
+            <button onClick={handleNextPage}>Next</button>
+        </nav>
     );
 };
 
-export default Navigation;
+export default Nav;

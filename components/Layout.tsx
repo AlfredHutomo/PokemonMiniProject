@@ -1,11 +1,12 @@
-import Navigation from './Navigation';
+import { ContentWrapper } from '../styles';
+import Footer from './Footer';
 
 const Layout: React.FC = ({ children }) => {
     return (
-        <div>
-            {children}
-            <Navigation />
-        </div>
+        <>
+            <ContentWrapper>{children}</ContentWrapper>
+            <Footer />
+        </>
     );
 };
 

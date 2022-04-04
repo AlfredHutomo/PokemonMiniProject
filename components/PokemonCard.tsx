@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Card } from '../styles';
 import { PokemonList } from '../utils/queries';
 
@@ -9,11 +10,13 @@ const PokemonCard: React.FC<PokemonCardProps> = (props) => {
     const { name, types, id } = props.pokemonData;
     return (
         <Card>
-            <img
+            <Image
                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
                 alt={`Pokemon ${name}`}
+                width={100}
+                height={100}
             />
-            <h2>{name}</h2>
+            <h3>{`#${id} ${name}`}</h3>
         </Card>
     );
 };

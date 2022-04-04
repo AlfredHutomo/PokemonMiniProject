@@ -13,11 +13,31 @@ export const Container = styled.div`
     height: 100vh;
 `;
 
+export const ContentWrapper = styled.div`
+    padding-bottom: 5vh;
+`;
+
+export const ListWrapper = styled.div`
+    height: 100%;
+`;
+
+export const CardList = styled.div`
+    display: flex;
+
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 5px;
+`;
+
 export const Card = styled.div`
     border: solid 2px grey;
-    border-radius: 1rem;
-    margin: 2rem;
+    border-radius: 5px;
+
+    width: 100%;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
+
+    flex: 0 45%;
 `;
