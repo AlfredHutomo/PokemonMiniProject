@@ -1,11 +1,11 @@
 import { Container, ContentWrapper } from '../styles';
-import Footer from './Footer';
+import Header from './Header';
 
 const Layout: React.FC = ({ children }) => {
     return (
         <Container>
+            <Header />
             <ContentWrapper>{children}</ContentWrapper>
-            <Footer />
         </Container>
     );
 };

@@ -1,13 +1,13 @@
 import Link from 'next/link';
-import { FooterWrapper } from '../styles';
+import { HeaderWrapper } from '../styles';
 
-const Footer: React.FC = () => {
+const Header: React.FC = () => {
     return (
-        <FooterWrapper>
+        <HeaderWrapper>
             <Link href={'/'}>Pokemon</Link>
             <Link href={'/pokemon-list'}>My Pokemon List</Link>
-        </FooterWrapper>
+        </HeaderWrapper>
     );
 };
 
-export default Footer;
+export default Header;

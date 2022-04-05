@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Card } from '../styles';
+import { pokemonNoFormat } from '../utils';
 import { PokemonList } from '../utils/queries';
 
 interface PokemonCardProps {
@@ -7,7 +8,7 @@ interface PokemonCardProps {
 }
 
 const PokemonCard: React.FC<PokemonCardProps> = (props) => {
-    const { name, types, id } = props.pokemonData;
+    const { name, id } = props.pokemonData;
     return (
         <Card>
             <Image
@@ -16,7 +17,7 @@ const PokemonCard: React.FC<PokemonCardProps> = (props) => {
                 width={100}
                 height={100}
             />
-            <h3>{`#${id} ${name}`}</h3>
+            <h3>{`${pokemonNoFormat(id)} ${name}`}</h3>
         </Card>
     );
 };

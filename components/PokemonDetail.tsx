@@ -26,7 +26,7 @@ const PokemonDetail: React.FC<PokemonDetailProps> = ({ pokemonId }) => {
 
     const { id, name, types, moves } = data?.pokemon_data[0] as PokemonDetail;
 
-    return <div>No. {pokemonNoFormat(id)}</div>;
+    return <div>{pokemonNoFormat(id)}</div>;
 };
 
 export default PokemonDetail;

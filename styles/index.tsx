@@ -8,15 +8,11 @@ const mq = Object.freeze({
 });
 
 const colors = Object.freeze({
-    primary: '#de3065',
+    primary: '#FF6868',
     secondary: '',
 });
 
-export const FooterWrapper = styled.div`
-    position: fixed;
-    bottom: 0;
-    overflow: hidden;
-
+export const HeaderWrapper = styled.div`
     display: flex;
     justify-content: space-evenly;
     align-items: center;

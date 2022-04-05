@@ -4,11 +4,6 @@ import { useRouter } from 'next/router';
 import { ParsedUrlQuery } from 'querystring';
 import Layout from '../../components/Layout';
 import PokemonDetail from '../../components/PokemonDetail';
-import {
-    IPokemonDetailData,
-    IPokemonDetailVars,
-    POKEMON_DATA,
-} from '../../utils/queries';
 
 interface IQueryParams extends ParsedUrlQuery {
     no: string;
@@ -20,7 +15,7 @@ const PokemonDetailPage: NextPage = () => {
 
     return (
         <Layout>
-            <PokemonDetail pokemonId={+no} />
+            <PokemonDetail pokemonId={Number(no)} />
         </Layout>
     );
 };
