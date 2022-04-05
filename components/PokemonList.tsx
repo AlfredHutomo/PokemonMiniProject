@@ -1,8 +1,8 @@
 import { useQuery } from '@apollo/client';
 import PokemonCard from './PokemonCard';
 import {
-    PokemonListData,
-    PokemonListVars,
+    IPokemonListData,
+    IPokemonListVars,
     POKEMONS_LIST,
 } from '../utils/queries';
 import { CardList, ListWrapper } from '../styles';
@@ -14,8 +14,8 @@ const POKEMON_SIZE = 10;
 const PokemonList: React.FC = (props) => {
     const [page, setPage] = useState<number>(0);
     const { loading, data, fetchMore } = useQuery<
-        PokemonListData,
-        PokemonListVars
+        IPokemonListData,
+        IPokemonListVars
     >(POKEMONS_LIST, {
         variables: {
             offset: page * POKEMON_SIZE,

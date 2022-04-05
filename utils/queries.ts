@@ -13,12 +13,12 @@ export interface PokemonType {
 }
 
 /* This is a type definition for the data that will be returned from the query. */
-export interface PokemonListData {
+export interface IPokemonListData {
     pokemons: PokemonList[];
 }
 
 /* This is a type definition for the variables that will be passed to the query. */
-export interface PokemonListVars {
+export interface IPokemonListVars {
     limit: number;
     offset: number;
 }
@@ -52,18 +52,18 @@ export interface PokemonDetail {
 }
 
 /* This is a type definition for the data that will be returned from the query. */
-export interface PokemonDetailData {
+export interface IPokemonDetailData {
     pokemon_data: PokemonDetail[];
 }
 
 /* This is a type definition for the variables that will be passed to the query. */
-export interface PokemonDetailVars {
+export interface IPokemonDetailVars {
     pokemonId: number;
-    generationId: number;
+    generationId?: number;
 }
 
 export const POKEMON_DATA = gql`
-    query getPokemonData($pokemonId: Int = 1, $generationId: Int = 1) {
+    query getPokemonData($pokemonId: Int = 1, $generationId: Int = 8) {
         pokemon_data: pokemon_v2_pokemon(where: { id: { _eq: $pokemonId } }) {
             name
             id

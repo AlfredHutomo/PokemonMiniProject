@@ -1,11 +1,39 @@
 import styled from '@emotion/styled';
 
-const mq = {
+const mq = Object.freeze({
     sm: 'screen and (max-width: 640px)',
     md: 'screen and (max-width: 768px)',
     lg: 'screen and (min-width: 1024px)',
     xl: 'screen and (min-width: 1280px)',
-};
+});
+
+const colors = Object.freeze({
+    primary: '#de3065',
+    secondary: '',
+});
+
+export const FooterWrapper = styled.div`
+    position: fixed;
+    bottom: 0;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    height: 5vh;
+
+    width: 100%;
+    max-width: 640px;
+
+    background-color: ${colors.primary};
+
+    > a {
+        text-decoration: none;
+
+        color: white;
+    }
+`;
 
 export const Container = styled.div`
     margin: 0 auto;
@@ -40,4 +68,32 @@ export const Card = styled.div`
     align-items: center;
 
     flex: 0 45%;
+`;
+
+export const Loader = styled.div`
+    .lds-dual-ring {
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+    }
+    .lds-dual-ring:after {
+        content: ' ';
+        display: block;
+        width: 64px;
+        height: 64px;
+        margin: 8px;
+        border-radius: 50%;
+        border: 6px solid ${colors.primary};
+        border-color: ${colors.primary} transparent ${colors.primary}
+            transparent;
+        animation: lds-dual-ring 1.2s linear infinite;
+    }
+    @keyframes lds-dual-ring {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
 `;
