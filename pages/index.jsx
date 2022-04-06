@@ -1,9 +1,7 @@
-import type { NextPage } from 'next';
-
 import Layout from '../components/Layout';
 import PokemonList from '../components/PokemonList';
 
-const Home: NextPage = () => {
+const Home = () => {
     return (
         <Layout>
             <PokemonList />

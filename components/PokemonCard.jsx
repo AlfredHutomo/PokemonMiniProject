@@ -4,11 +4,7 @@ import { Card } from '../styles';
 import { pokemonNoFormat } from '../utils';
 import { PokemonList } from '../utils/queries';
 
-interface PokemonCardProps {
-    pokemonData: PokemonList;
-}
-
-const PokemonCard: React.FC<PokemonCardProps> = (props) => {
+const PokemonCard = (props) => {
     const { name, id } = props.pokemonData;
     return (
         <Link href={`/pokemon/${id}`} passHref>

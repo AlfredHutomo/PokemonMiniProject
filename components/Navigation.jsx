@@ -1,11 +1,6 @@
 import Image from 'next/image';
 
-interface NavProps {
-    currentPage: number;
-    setPage: React.Dispatch<React.SetStateAction<number>>;
-}
-
-const Nav: React.FC<NavProps> = ({ currentPage, setPage }) => {
+const Nav = ({ currentPage, setPage }) => {
     const handlePrevPage = () => {
         setPage((prevVal) => prevVal - 1);
     };

@@ -3,7 +3,7 @@
  * @param {number} numId - The number of the pokemon.
  * @returns A string.
  */
-export function pokemonNoFormat(numId: number): string {
+export function pokemonNoFormat(numId) {
     const DIGITS = 3;
     const stringNumber = numId.toString().split('');
 

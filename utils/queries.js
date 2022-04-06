@@ -1,28 +1,5 @@
 import { gql } from '@apollo/client';
 
-export interface PokemonList {
-    name: string;
-    id: number;
-    types: PokemonType[];
-}
-
-export interface PokemonType {
-    type: {
-        name: string;
-    };
-}
-
-/* This is a type definition for the data that will be returned from the query. */
-export interface IPokemonListData {
-    pokemons: PokemonList[];
-}
-
-/* This is a type definition for the variables that will be passed to the query. */
-export interface IPokemonListVars {
-    limit: number;
-    offset: number;
-}
-
 export const POKEMON_LIST = gql`
     query getPokemonsList($offset: Int = 0, $limit: Int = 10) {
         pokemons: pokemon_v2_pokemon(limit: $limit, offset: $offset) {
@@ -36,31 +13,6 @@ export const POKEMON_LIST = gql`
         }
     }
 `;
-
-export interface PokemonMoves {
-    move_id: number;
-    move: { name: string };
-    learn_method: { name: string }[];
-    move_learn_method_id: number;
-}
-
-export interface PokemonData {
-    name: string;
-    id: number;
-    types: PokemonType[];
-    moves: PokemonMoves[];
-}
-
-/* This is a type definition for the data that will be returned from the query. */
-export interface IPokemonDetailData {
-    pokemon_data: PokemonData[];
-}
-
-/* This is a type definition for the variables that will be passed to the query. */
-export interface IPokemonDetailVars {
-    pokemonId: number;
-    generationId?: number;
-}
 
 export const POKEMON_DATA = gql`
     query getPokemonData($pokemonId: Int = 1, $generationId: Int = 8) {

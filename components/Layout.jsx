@@ -1,7 +1,7 @@
 import { Container, ContentWrapper } from '../styles';
 import Header from './Header';
 
-const Layout: React.FC = ({ children }) => {
+const Layout = ({ children }) => {
     return (
         <Container>
             <Header />

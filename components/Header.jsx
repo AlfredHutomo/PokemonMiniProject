@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { HeaderWrapper } from '../styles';
 
-const Header: React.FC = () => {
+const Header = () => {
     return (
         <HeaderWrapper>
             <Link href={'/'}>Poké-list</Link>
