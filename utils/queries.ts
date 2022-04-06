@@ -23,7 +23,7 @@ export interface IPokemonListVars {
     offset: number;
 }
 
-export const POKEMONS_LIST = gql`
+export const POKEMON_LIST = gql`
     query getPokemonsList($offset: Int = 0, $limit: Int = 10) {
         pokemons: pokemon_v2_pokemon(limit: $limit, offset: $offset) {
             name
@@ -44,7 +44,7 @@ export interface PokemonMoves {
     move_learn_method_id: number;
 }
 
-export interface PokemonDetail {
+export interface PokemonData {
     name: string;
     id: number;
     types: PokemonType[];
@@ -53,7 +53,7 @@ export interface PokemonDetail {
 
 /* This is a type definition for the data that will be returned from the query. */
 export interface IPokemonDetailData {
-    pokemon_data: PokemonDetail[];
+    pokemon_data: PokemonData[];
 }
 
 /* This is a type definition for the variables that will be passed to the query. */

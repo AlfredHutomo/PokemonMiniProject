@@ -4,8 +4,8 @@ import { HeaderWrapper } from '../styles';
 const Header: React.FC = () => {
     return (
         <HeaderWrapper>
-            <Link href={'/'}>Pokemon</Link>
-            <Link href={'/pokemon-list'}>My Pokemon List</Link>
+            <Link href={'/'}>Poké-list</Link>
+            <Link href={'/pokemon-list'}>My List</Link>
         </HeaderWrapper>
     );
 };

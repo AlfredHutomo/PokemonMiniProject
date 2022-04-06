@@ -14,10 +14,11 @@ const colors = Object.freeze({
 
 export const HeaderWrapper = styled.div`
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: space-between;
 
-    height: 5vh;
+    padding: 20px;
+
+    height: 8vh;
 
     width: 100%;
     max-width: 640px;
@@ -26,8 +27,14 @@ export const HeaderWrapper = styled.div`
 
     > a {
         text-decoration: none;
+        font-size: 2.4rem;
+        font-weight: bold;
 
         color: white;
+
+        &:active {
+            text-decoration: underline;
+        }
     }
 `;
 
@@ -46,24 +53,21 @@ export const ListWrapper = styled.div`
 `;
 
 export const CardList = styled.div`
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 
-    flex-flow: row wrap;
-    justify-content: center;
-    gap: 5px;
+    row-gap: 10px;
 `;
 
 export const Card = styled.div`
     border: solid 2px grey;
     border-radius: 5px;
 
-    width: 100%;
+    margin: 0 5px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    flex: 0 45%;
 `;
 
 export const Loader = styled.div`

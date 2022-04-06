@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 interface NavProps {
     currentPage: number;
     setPage: React.Dispatch<React.SetStateAction<number>>;
@@ -14,10 +16,22 @@ const Nav: React.FC<NavProps> = ({ currentPage, setPage }) => {
     return (
         <nav>
             <button disabled={!currentPage} onClick={handlePrevPage}>
-                Previous
+                <Image
+                    src={'/assets/ActivePrevButton.svg'}
+                    alt='Previous Button'
+                    width={70}
+                    height={70}
+                />
             </button>
             <span>{currentPage + 1}</span>
-            <button onClick={handleNextPage}>Next</button>
+            <button onClick={handleNextPage}>
+                <Image
+                    src={'/assets/ActiveNextButton.svg'}
+                    alt='Previous Button'
+                    width={70}
+                    height={70}
+                />
+            </button>
         </nav>
     );
 };

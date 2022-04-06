@@ -25,6 +25,10 @@ export default function Document() {
 
                         font-family: 'Roboto', sans-serif;
                     }
+
+                    html {
+                        font-size: 62.5%;
+                    }
                 `}
             />
             <body>

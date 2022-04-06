@@ -1,10 +1,9 @@
 import { useQuery } from '@apollo/client';
-import { Loader } from '../styles';
 import { pokemonNoFormat } from '../utils';
 import {
     IPokemonDetailData,
     IPokemonDetailVars,
-    PokemonDetail,
+    PokemonData,
     POKEMON_DATA,
 } from '../utils/queries';
 
@@ -20,11 +19,11 @@ const PokemonDetail: React.FC<PokemonDetailProps> = ({ pokemonId }) => {
         }
     );
 
-    if (loading) return <Loader />;
+    if (loading) return <div>is Loading</div>;
 
     if (data?.pokemon_data.length === 0) return <div>Pokemon not found</div>;
 
-    const { id, name, types, moves } = data?.pokemon_data[0] as PokemonDetail;
+    const { id, name, types, moves } = data?.pokemon_data[0] as PokemonData;
 
     return <div>{pokemonNoFormat(id)}</div>;
 };
