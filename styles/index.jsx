@@ -68,6 +68,8 @@ export const Card = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    cursor: pointer;
 `;
 
 export const Loader = styled.div`

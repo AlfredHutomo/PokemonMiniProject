@@ -9,7 +9,7 @@ const POKEMON_SIZE = 10;
 
 const PokemonList = () => {
     const [page, setPage] = useState(0);
-    const { loading, data, fetchMore } = useQuery(POKEMON_LIST, {
+    const { loading, data } = useQuery(POKEMON_LIST, {
         variables: {
             offset: page * POKEMON_SIZE,
             limit: POKEMON_SIZE,
@@ -21,7 +21,7 @@ const PokemonList = () => {
     return (
         <ListWrapper>
             <CardList>
-                {data?.pokemons.map((pokemon) => (
+                {data?.pokemon.map((pokemon) => (
                     <PokemonCard key={pokemon.id} pokemonData={pokemon} />
                 ))}
             </CardList>
