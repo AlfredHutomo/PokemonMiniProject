@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Card } from '../styles';
-import { pokemonNoFormat } from '../utils';
-import { PokemonList } from '../utils/queries';
+import { Card } from '@/styles/index';
+import { pokemonNoFormat } from '@/utils/index';
 
 const PokemonCard = (props) => {
     const { name, id } = props.pokemonData;

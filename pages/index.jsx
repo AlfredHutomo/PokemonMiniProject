@@ -1,5 +1,5 @@
-import Layout from '../components/Layout';
-import PokemonList from '../components/PokemonList';
+import Layout from '@/components/Layout/Layout';
+import PokemonList from '@/components/PokemonList';
 
 const Home = () => {
     return (

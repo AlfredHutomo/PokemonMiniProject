@@ -19,6 +19,6 @@ model Pokemon {
   id         String  @id @default(uuid())
   pokemonNo  Int
   customName String?
-  User       User?   @relation(fields: [userId], references: [id])
-  userId     String?
+  User       User   @relation(fields: [userId], references: [id])
+  userId     String
 }

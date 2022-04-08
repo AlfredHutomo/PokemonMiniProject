@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client';
-import { pokemonNoFormat } from '../utils';
-import { PokemonData, POKEMON_DATA } from '../utils/queries';
+import { pokemonNoFormat } from '@/utils/index';
+import { PokemonData, POKEMON_DATA } from '@/utils/queries';
 
 const PokemonDetail = ({ pokemonId }) => {
     const { loading, data } = useQuery(POKEMON_DATA, {

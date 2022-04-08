@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { HeaderWrapper } from '../styles';
+import { HeaderWrapper } from '@/styles/index';
 
 const Header = () => {
     return (

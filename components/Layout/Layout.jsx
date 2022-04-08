@@ -1,5 +1,5 @@
-import { Container, ContentWrapper } from '../styles';
-import Header from './Header';
+import { Container, ContentWrapper } from '@/styles/index';
+import Header from '../Header';
 
 const Layout = ({ children }) => {
     return (

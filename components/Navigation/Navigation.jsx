@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-const Nav = ({ currentPage, setPage }) => {
+const Navigation = ({ currentPage, setPage }) => {
     const handlePrevPage = () => {
         setPage((prevVal) => prevVal - 1);
     };
@@ -31,4 +31,4 @@ const Nav = ({ currentPage, setPage }) => {
     );
 };
 
-export default Nav;
+export default Navigation;

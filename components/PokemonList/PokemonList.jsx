@@ -1,9 +1,9 @@
 import { useQuery } from '@apollo/client';
-import PokemonCard from './PokemonCard';
-import { POKEMON_LIST } from '../utils/queries';
-import { CardList, ListWrapper } from '../styles';
+import PokemonCard from '@/components/PokemonCard';
+import { POKEMON_LIST } from '@/utils/queries';
+import { CardList, ListWrapper } from '@/styles/index';
 import { useState } from 'react';
-import Nav from './Navigation';
+import Navigation from '../Navigation';
 
 const POKEMON_SIZE = 10;
 
@@ -25,7 +25,7 @@ const PokemonList = () => {
                     <PokemonCard key={pokemon.id} pokemonData={pokemon} />
                 ))}
             </CardList>
-            <Nav currentPage={page} setPage={setPage} />
+            <Navigation currentPage={page} setPage={setPage} />
         </ListWrapper>
     );
 };
